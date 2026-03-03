@@ -4,13 +4,31 @@
   justify-content: space-between;
   align-items: center;
   height: 100vh;
-  padding: 80rpx 0 60rpx;
+  padding: 60rpx 0 60rpx;
   box-sizing: border-box;
+  background: #fdf6ec;
 }
 
 .hello-text {
   font-size: 48rpx;
   color: #333;
+}
+
+.incense-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.incense-canvas {
+  width: 200rpx;
+  height: 360rpx;
+}
+
+.hint-text {
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #999;
 }
 
 .btn-bar {

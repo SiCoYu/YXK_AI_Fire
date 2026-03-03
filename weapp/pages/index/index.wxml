@@ -1,6 +1,11 @@
 <view class="container">
   <text class="hello-text">{{text}}</text>
 
+  <view class="incense-wrap">
+    <canvas type="2d" id="incenseCanvas" class="incense-canvas"></canvas>
+    <text class="hint-text">{{isPlaying ? '燃香中...' : '点击「上香」开始'}}</text>
+  </view>
+
   <view class="btn-bar">
     <button class="action-btn" bindtap="onIncense">上香</button>
     <button class="action-btn" bindtap="onOffering">上供</button>
