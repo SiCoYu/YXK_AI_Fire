@@ -33,6 +33,7 @@ Page({
   _h: 0,
   _emberY: 0,
   _frameData: null,
+  _audioCtx: null,
 
   onReady() {
     const ctx = tt.createCanvasContext('incenseCanvas', this)
@@ -123,7 +124,36 @@ Page({
   },
 
   onDrum() {
-    tt.showToast({ title: '敲鼓', icon: 'none' })
+    if (!this._audioCtx) {
+      this._audioCtx = tt.createWebAudioContext()
+    }
+    const ac = this._audioCtx
+    const now = ac.currentTime
+
+    // 木鱼主体：正弦波，频率从720Hz衰减到480Hz，模拟木质共鸣腔
+    const osc1 = ac.createOscillator()
+    const gain1 = ac.createGain()
+    osc1.type = 'sine'
+    osc1.frequency.setValueAtTime(720, now)
+    osc1.frequency.exponentialRampToValueAtTime(480, now + 0.18)
+    gain1.gain.setValueAtTime(0.7, now)
+    gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.5)
+    osc1.connect(gain1)
+    gain1.connect(ac.destination)
+    osc1.start(now)
+    osc1.stop(now + 0.5)
+
+    // 敲击瞬态：短促方波，模拟木槌碰撞声
+    const osc2 = ac.createOscillator()
+    const gain2 = ac.createGain()
+    osc2.type = 'square'
+    osc2.frequency.setValueAtTime(1800, now)
+    gain2.gain.setValueAtTime(0.12, now)
+    gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.04)
+    osc2.connect(gain2)
+    gain2.connect(ac.destination)
+    osc2.start(now)
+    osc2.stop(now + 0.04)
   },
 
   onUnload() {
