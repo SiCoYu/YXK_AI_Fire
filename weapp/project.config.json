@@ -1,0 +1,14 @@
+{
+  "appid": "touristappid",
+  "projectname": "YXK_AI_Fire",
+  "description": "YXK AI Fire 微信小程序",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": false
+  },
+  "compileType": "miniprogram",
+  "miniprogramRoot": "./"
+}

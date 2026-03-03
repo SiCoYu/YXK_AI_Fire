@@ -1,0 +1,9 @@
+{
+  "appid": "ttxxxxxxxxxxxxxxxx",
+  "projectname": "YXK_AI_Fire",
+  "description": "YXK AI Fire 抖音小程序",
+  "setting": {
+    "urlCheck": false,
+    "es6": true
+  }
+}
