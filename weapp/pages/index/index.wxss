@@ -1,11 +1,35 @@
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   height: 100vh;
+  padding: 80rpx 0 60rpx;
+  box-sizing: border-box;
 }
 
 .hello-text {
   font-size: 48rpx;
   color: #333;
+}
+
+.btn-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+
+.action-btn {
+  flex: 1;
+  margin: 0 16rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  color: #fff;
+  background-color: #c0392b;
+  border-radius: 16rpx;
+  border: none;
 }

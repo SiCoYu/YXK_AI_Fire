@@ -1,3 +1,9 @@
 <view class="container">
   <text class="hello-text">{{text}}</text>
+
+  <view class="btn-bar">
+    <button class="action-btn" bindtap="onIncense">上香</button>
+    <button class="action-btn" bindtap="onOffering">上供</button>
+    <button class="action-btn" bindtap="onDrum">敲鼓</button>
+  </view>
 </view>
